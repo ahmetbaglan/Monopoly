@@ -31,4 +31,3 @@ class ChancePile:
 		# Generate an order of chance cards
 		self.pile = random.sample(range(0, len(self.CARDS)),
 			len(self.CARDS))
-		print str(self.pile)
