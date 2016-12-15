@@ -43,20 +43,19 @@ class Board:
 		"Boardwalk"
 	}
 
-	def __init__(self):
-		# Define types of tiles on board
-		self.tilesRealestate = [
-				1,3,6,8,9,12,14,15,17,19,20,22,24,25,27,28,30,32,33,35,38,40]
-		self.tilesChance = [7,23,37]
-		self.tilesCommunity = [2,18,34]
-		self.tilesUtilities = [13,29]
-		self.tilesTransport = [5,16,26,36]
-		self.tilesTax = [4,39]
-		self.tilesNone = [10,21]
-		self.tilesJail = [11]
-		self.tilesGoToJail = [31]
-		self.tilesGo = [0]
+	TILES_REAL_ESTATE = [
+		1,3,6,8,9,12,14,15,17,19,20,22,24,25,27,28,30,32,33,35,38,40]
+	TILES_CHANCE      = [7,23,37]
+	TILES_COMMUNITY   = [2,18,34]
+	TILES_UTILITIES   = [13,29]
+	TILES_TRANSPORT   = [5,16,26,36]
+	TILES_TAX         = [4,39]
+	TILES_NONE        = [10,21]
+	TILES_JAIL        = [11]
+	TILES_GO_TO_JAIL  = [31]
+	TILES_GO          = [0]
 
+	def __init__(self):
 		# Check if total amount of tiles is correct
 		tilesCount = self.getSize()
 		if tilesCount != 41:
@@ -67,23 +66,23 @@ class Board:
 
 	def getTileType(self, tile):
 		# Return a string of the type of tile corresponding with the index given
-		if tile in self.tilesRealestate:
+		if tile in Board.TILES_REAL_ESTATE:
 			return "realestate"
-		elif tile in self.tilesChance:
+		elif tile in Board.TILES_CHANCE:
 			return "chance"
-		elif tile in self.tilesCommunity:
+		elif tile in Board.TILES_COMMUNITY:
 			return "community"
-		elif tile in self.tilesUtilities:
+		elif tile in Board.TILES_UTILITIES:
 			return "utitlities"
-		elif tile in self.tilesTransport:
+		elif tile in Board.TILES_TRANSPORT:
 			return "transport"
-		elif tile in self.tilesTax:
+		elif tile in Board.TILES_TAX:
 			return "tax"
-		elif tile in self.tilesJail:
+		elif tile in Board.TILES_JAIL:
 			return "jail"
-		elif tile in self.tilesGoToJail:
+		elif tile in Board.TILES_GO_TO_JAIL:
 			return "gotojail"
-		elif tile in self.tilesGo:
+		elif tile in Board.TILES_GO:
 			return "go"
 		else:
 			return "none"
@@ -94,8 +93,8 @@ class Board:
 		self.hits[tile] += 1
 
 	def getSize(self):
-		return (len(self.tilesRealestate) + len(self.tilesChance) +
-				len(self.tilesCommunity) + len(self.tilesUtilities) +
-				len(self.tilesTransport) + len(self.tilesTax) +
-				len(self.tilesNone) + len(self.tilesJail) +
-				len(self.tilesGoToJail) + len(self.tilesGo))
+		return (len(Board.TILES_REAL_ESTATE) + len(Board.TILES_CHANCE) +
+				len(Board.TILES_COMMUNITY) + len(Board.TILES_UTILITIES) +
+				len(Board.TILES_TRANSPORT) + len(Board.TILES_TAX) +
+				len(Board.TILES_NONE) + len(Board.TILES_JAIL) +
+				len(Board.TILES_GO_TO_JAIL) + len(Board.TILES_GO))

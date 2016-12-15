@@ -33,7 +33,7 @@ class Game:
 
 		# Override player's position if player should fo to prison
 		if goingToJail:
-			player.position = self.board.tilesJail[0]
+			player.position = Board.TILES_JAIL[0]
 
 		# Log the fact that a player has landed on a tile
 		self.board.hit(player.position)
