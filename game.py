@@ -9,10 +9,12 @@ class Game:
 		self.rounds = rounds
 
 	def run(self):
+		# Play the game for a given amount of rounds
 		for i in range(0, self.rounds):
 			self.round()
 
 	def round(self):
+		# Each round, every player should get its turn
 		for player in self.players:
 			self.turn(player)
 
@@ -33,6 +35,7 @@ class Game:
 		if goingToJail:
 			player.position = self.board.tilesJail[0]
 
+		# Log the fact that a player has landed on a tile
 		self.board.hit(player.position)
 
 		# Go again if not on jail and has thrown double
