@@ -1,11 +1,13 @@
 from util import *
 from board import *
+from chance import *
 
 class Game:
 
 	def __init__(self, players, rounds):
 		self.players = players
 		self.board = Board()
+		self.chancePile = ChancePile()
 		self.rounds = rounds
 
 	def run(self):
