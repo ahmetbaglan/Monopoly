@@ -1,5 +1,48 @@
 class Board:
 
+	TILE_NAME = {
+		"Go",
+		"Mediterranean Avenue",
+		"Community Chest",
+		"Baltic Avenue",
+		"Income Tax",
+		"Reading Railroad",
+		"Oriental Avenue",
+		"Chance",
+		"Vermont Avenue",
+		"Connecticut Avenue",
+		"Just Visiting",
+		"In Jail",
+		"St. Charles Place",
+		"Electric Company"
+		"States Avenue",
+		"Verginia Avenue",
+		"Pennsylvania Railroad",
+		"St. James Place",
+		"Tennessee Avenue",
+		"New York Avenue",
+		"Free Parking",
+		"Kentucky Avenue",
+		"Chance",
+		"Indiana Avenue",
+		"Illinois Avenue",
+		"B & O Railroad",
+		"Atlantic Avenue",
+		"Ventinor Avenue",
+		"Waterworks",
+		"Marvin Gardens",
+		"Go To Jail",
+		"Pacific Avenue",
+		"North Carolina Avenue",
+		"Community Chest",
+		"Pennsylvania Avenue",
+		"Short Line",
+		"Chance",
+		"Park Place",
+		"Luxury Tax",
+		"Boardwalk"
+	}
+
 	def __init__(self):
 		# Define types of tiles on board
 		self.tilesRealestate = [
