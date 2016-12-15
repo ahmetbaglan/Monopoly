@@ -13,7 +13,7 @@ r = Results("results.csv")
 print "Starting simulation"
 
 # Set simluation variables
-count = 100000/2
+count = 10000
 start = time.time()
 
 # Go through set amount of simulations
@@ -29,7 +29,8 @@ for i in range(0, count):
 
 	# Display the progress every 1/1000 of the way to begin finished
 	if (i + 1) % (count / 1000) == 0:
-		sys.stdout.write("\rCurrently at %f percent done, %f games/second" % (i / float(count) * 100, speed))
+		sys.stdout.write("\rCurrently at %s%% done, %s games/second" %
+			(str(round((i + 1) / float(count) * 100, 1)), str(round(speed, 1))))
 		sys.stdout.flush()
 
 # Print that the simulation is finished
