@@ -1,6 +1,6 @@
 class Board:
 
-	TILE_NAME = {
+	TILE_NAME = [
 		"Go",
 		"Mediterranean Avenue",
 		"Community Chest",
@@ -14,11 +14,12 @@ class Board:
 		"Just Visiting",
 		"In Jail",
 		"St. Charles Place",
-		"Electric Company"
+		"Electric Company",
 		"States Avenue",
 		"Verginia Avenue",
 		"Pennsylvania Railroad",
 		"St. James Place",
+		"Community Chest",
 		"Tennessee Avenue",
 		"New York Avenue",
 		"Free Parking",
@@ -41,7 +42,7 @@ class Board:
 		"Park Place",
 		"Luxury Tax",
 		"Boardwalk"
-	}
+	]
 
 	TILES_REAL_ESTATE = [
 		1,3,6,8,9,12,14,15,17,19,20,22,24,25,27,28,30,32,33,35,38,40]

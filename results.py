@@ -1,3 +1,5 @@
+from board import *
+
 class Results:
 
 	def __init__(self, filename):
@@ -19,7 +21,7 @@ class Results:
 		
 		# Write the tile index, the hit count and the chance
 		for i in range(0, len(self.hits)):
-			file.write("%i;%i;\"=b%i/b$1\"\n" % (i, self.hits[i], i + 2))
+			file.write("\"%s\";%i;\"=b%i/b$1\"\n" % (Board.TILE_NAME[i], self.hits[i], i + 2))
 
 		# Close and write the file
 		file.close()
