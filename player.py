@@ -23,7 +23,8 @@ class Player:
 		# Calculate new position, overflow if necessary
 		newPosition = (self.position + diceResults[0]) % board.getSize()
 		# Add one to position, if went past jail
-		if newPosition >= board.tilesJail[0] and self.position < board.tilesJail[0]:
+		if (newPosition >= board.tilesJail[0] and newPosition < 35) and (
+				self.position < board.tilesJail[0] or self.position > 35):
 			newPosition += 1
 		# Apply new position
 		self.position = newPosition
