@@ -23,7 +23,7 @@ class Game:
 	def turn(self, player):
 		# Get number of eyes on dice
 		diceResults = diceThrow()
-		# Move the player to new position
+		# Move the player to new position, goingToJail True is 3 doubles thrown
 		goingToJail = player.move(self.board, diceResults)
 
 		# Get tile type
@@ -33,11 +33,15 @@ class Game:
 		if tileType == "gotojail":
 			goingToJail = True
 
-		# Override player's position if player should fo to prison
+		# Override player's position if player should go to prison
 		if goingToJail:
 			player.position = Board.TILES_JAIL[0]
 
-		# Log the fact that a player has landed on a tile
+		# Do chance card if player has landed on a chance tile
+		if player.position in Board.TILES_CHANCE:
+			player.doChanceCard(self.chancePile.pullCard(), self.board)
+
+		# Log the fact that a player has landed on a tile, after all movements
 		self.board.hit(player.position)
 
 		# Go again if not on jail and has thrown double

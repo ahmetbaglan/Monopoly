@@ -50,7 +50,7 @@ class ChancePile:
 		self.pile = newPile
 		
 		# Return the card that was originally at the top of the pile
-		return card
+		return self.CARDS[card]
 
 	def __str__(self):
 		# Start with calling that is a pile of cards

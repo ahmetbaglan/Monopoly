@@ -1,11 +1,7 @@
-from chance import *
+#!/usr/bin/python
 
-cp = ChancePile()
+from game import *
+from player import *
 
-print "Before:\n"
-print str(cp)
-
-cp.pullCard()
-
-print "After:\n"
-print str(cp)
+g = Game([Player()], 100)
+g.run()
