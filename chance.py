@@ -7,6 +7,10 @@ class ChanceCard:
 		self.kind = kind
 		self.value = value
 
+	def __str__(self):
+		# Return the chance card in a readable form
+		return "ChanceCard(%s, %s)" % (self.kind, str(self.value))
+
 class ChancePile:
 
 	CARDS = [
@@ -33,6 +37,30 @@ class ChancePile:
 			len(self.CARDS))
 
 	def pullCard(self):
+		# Get the card that is currently at the top of the pile
 		card = self.pile[0]
+
+		# Generate new pile with picked card at the bottom
+		newPile = [None] * len(self.pile)
+		for i in range(0, len(self.pile) - 1):
+			newPile[i] = self.pile[i + 1]
+		newPile[len(newPile) - 1] = card
+
+		# Set the new pile to be the pile
+		self.pile = newPile
 		
+		# Return the card that was originally at the top of the pile
 		return card
+
+	def __str__(self):
+		# Start with calling that is a pile of cards
+		string = "PILE OF CHANCE CARDS:\n"
+
+		# Print all the chance cards
+		for cardIndex in self.pile:
+			string += " - "
+			string += str(self.CARDS[cardIndex])
+			string += "\n"
+
+		# Return the generated string
+		return string
