@@ -1,4 +1,5 @@
 from random import randint
+import argparse
 
 def diceThrow():
 	dice1 = randint(1, 6)
@@ -6,3 +7,18 @@ def diceThrow():
 
 	# Return total num of eyes, and whether or not the dices were equal
 	return [dice1 + dice2, dice1 == dice2]
+
+def representsInt(s):
+	try: 
+		int(s)
+		return True
+	except ValueError:
+		return False
+
+def positiveInt(x):
+	if not representsInt(x):
+		raise argparse.ArgumentTypeError("should be a integer")
+	x = int(x)
+	if x <= 0:
+		raise argparse.ArgumentTypeError("should be bigger than 0")
+	return x
