@@ -8,7 +8,7 @@ import time
 import argparse
 
 def runSimulation(args):
-	# Init results class for saving results
+	# Init results class for saving the results
 	r = Results("results")
 
 	# Print start message
