@@ -1,6 +1,7 @@
 from util import *
 from board import *
 from chance import *
+from community import *
 
 class Game:
 
@@ -8,6 +9,7 @@ class Game:
 		self.players = players
 		self.board = Board()
 		self.chancePile = ChancePile()
+		self.communityPile = CommunityPile()
 		self.rounds = rounds
 
 	def run(self):
@@ -40,6 +42,10 @@ class Game:
 		# Do chance card if player has landed on a chance tile
 		if player.position in Board.TILES_CHANCE:
 			player.doChanceCard(self.chancePile.pullCard(), self.board)
+
+		# Do commmunity card if player has landed on a community chest tile
+		if player.position in Board.TILES_COMMUNITY:
+			player.doCommunityCard(self.communityPile.pullCard(), self.board)
 
 		# Log the fact that a player has landed on a tile, after all movements
 		self.board.hit(player.position)

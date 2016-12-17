@@ -76,3 +76,8 @@ class Player:
 			# Move player to given position otherwise
 			else:
 				self.position = card.value
+
+	def doCommunityCard(self, card, board):
+		# Go to given position if card is of the advance kind
+		if card.kind == "advance":
+			self.position = card.value

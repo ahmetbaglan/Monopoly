@@ -1,7 +1,7 @@
 import random
 from chance import *
 
-class ChanceCard:
+class CommunityCard:
 
 	def __init__(self, kind, value):
 		self.kind = kind
@@ -9,27 +9,28 @@ class ChanceCard:
 
 	def __str__(self):
 		# Return the chance card in a readable form
-		return "ChanceCard(%s, %s)" % (self.kind, str(self.value))
+		return "CommunityCard(%s, %s)" % (self.kind, str(self.value))
 
-class ChancePile:
+class CommunityPile:
 
 	CARDS = [
-		ChanceCard("advance", 0),
-		ChanceCard("advance", 25),
-		ChanceCard("advance", 12),
-		ChanceCard("advance", "utility"),
-		ChanceCard("advance", "railroad"),
-		ChanceCard("cash", 50),
-		ChanceCard("escapejail", None),
-		ChanceCard("advance", -3),
-		ChanceCard("advance", 11),
-		ChanceCard("tax", [-25, -100]), # 25 for house, 100 for hotel
-		ChanceCard("cash", -15),
-		ChanceCard("advance", 5),
-		ChanceCard("advance", 40),
-		ChanceCard("pay", 50), # pay each player 50
-		ChanceCard("cash", 150),
-		ChanceCard("cash", 100),
+		CommunityCard("advance", 0),
+		CommunityCard("cash", 200),
+		CommunityCard("cash", -50),
+		CommunityCard("cash", 50),
+		CommunityCard("escapejail", None),
+		CommunityCard("advance", 11),
+		CommunityCard("receive", 50), # from every player
+		CommunityCard("cash", 100),
+		CommunityCard("cash", 20),
+		CommunityCard("receive", 10), # from every player
+		CommunityCard("cash", 100),
+		CommunityCard("cash", -100),
+		CommunityCard("cash", -150),
+		CommunityCard("cash", 25),
+		CommunityCard("tax", [-40, -115]), # for each [house, hotel]
+		CommunityCard("cash", 10),
+		CommunityCard("cash", 100)
 	]
 
 	def __init__(self):
@@ -55,7 +56,7 @@ class ChancePile:
 
 	def __str__(self):
 		# Start with calling that is a pile of cards
-		string = "PILE OF CHANCE CARDS:\n"
+		string = "PILE OF COMMUNITY CHEST CARDS:\n"
 
 		# Print all the chance cards
 		for cardIndex in self.pile:
