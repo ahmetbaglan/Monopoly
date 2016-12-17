@@ -7,19 +7,21 @@ import sys
 import time
 
 # Init results class for saving results
-r = Results("results.csv")
+r = Results("results")
 
 # Print start message
 print "Starting simulation"
 
 # Set simluation variables
-count = 10000
+count = 50000
+players = 1
+rounds = 100
 start = time.time()
 
 # Go through set amount of simulations
 for i in range(0, count):
 	# Start a new game, run it and save the results
-	g = Game([Player()], 100)
+	g = Game([Player()] * players, rounds)
 	g.run()
 	r.addHitResults(g.board.hits)
 
@@ -37,4 +39,4 @@ for i in range(0, count):
 print "\nDone!"
 
 # Same the results to a csv
-r.write()
+r.writeHTML(count, players, rounds)
