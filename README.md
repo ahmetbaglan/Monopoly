@@ -14,7 +14,7 @@ run the program, visit the --help page.
 The program can be used in the follow manner.
 
 ```
-usage: monopoly.py [-h] [-n NUMBER] [-p {1,2,3,4,5,6}] [-r ROUNDS]
+monopoly.py [-h] [-n NUMBER] [-p {1,2,3,4,5,6}] [-r ROUNDS]
 ```
 
 ### Help page
