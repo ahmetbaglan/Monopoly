@@ -39,6 +39,7 @@ class Results:
 		file.write("<div><div class=\"setting\">Players</div><div class=\"value\">%s</div></div>" % players)
 		file.write("<div><div class=\"setting\">Rounds/game</div><div class=\"value\">%s</div></div>" % rounds)
 		file.write("<div><div class=\"setting\">Chance</div><div class=\"value\">True</div></div>")
+		file.write("<div><div class=\"setting\">Community Chest</div><div class=\"value\">True</div></div>")
 
 		# Write inbetween
 		file.write("</div></div><div class=\"results\">")
