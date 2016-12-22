@@ -1,9 +1,10 @@
 from board import *
 
+# TODO: count the number of simulations locally
+
 class Results:
 
-	def __init__(self, filename):
-		self.filename = filename
+	def __init__(self):
 		# Generate an empty array to save the times a player has passed a tile
 		self.hits = [0] * 41
 
@@ -14,7 +15,7 @@ class Results:
 
 	def write(self):
 		# Open the file
-		file = open(self.filename + ".csv", "w")
+		file = open("results.csv", "w")
 		
 		# Write a title and the sum of all the tile hits
 		file.write("Hit frequency;\"=SUM(b2:b42)\";\n")
@@ -28,7 +29,7 @@ class Results:
 
 	def writeHTML(self, count, players, rounds):
 		# Open the file
-		file = open(self.filename + ".html", "w")
+		file = open("results.html", "w")
 
 		# Write the beginning HTML
 		barHeight = 100.0 / float(len(self.hits))
