@@ -5,3 +5,4 @@ from player import *
 
 g = Game([Player()], 100)
 g.run()
+a=  5
