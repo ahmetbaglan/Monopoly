@@ -1,9 +1,6 @@
 # Monopoly simulation
 
 This is a simulation program written in Python to simulate games of Monopoly.
-The goal of this project is to determine a winning strategy by which to play the
-game. So far, however, this program does no more than determine the frequency,
-and thus chance, by which each tile is visited.
 
 ## Usage
 
@@ -34,4 +31,9 @@ optional arguments:
                         number of players to run the simulation with
   -r ROUNDS, --rounds ROUNDS
                         number of rounds to simulate each game
-```
+
+						
+						
+The output file is a CSV including the number of hits to a tile and several properties for each tile
+
+Ahmet Baglan
